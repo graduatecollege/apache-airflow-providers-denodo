@@ -1,0 +1,38 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
+name = "apache-airflow-providers-denodo"
+authors = [
+    { name = "Mikael Arvola", email = "marvel@illinois.edu" },
+]
+license-files = [
+    "LICENSE", "NOTICE"
+]
+description = "Denodo connection for Apache Airflow."
+classifiers = [
+    "Framework :: Apache Airflow",
+    "Framework :: Apache Airflow :: Provider",
+]
+dynamic = [
+    "version"
+]
+requires-python = "~=3.12"
+dependencies = [
+    "apache-airflow>=3.2",
+    "denodo-sqlalchemy>=2.0.4"
+]
+
+[project.urls]
+Source = "https://github.com/graduatecollege/apache-airflow-providers-denodo"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.entry-points.apache_airflow_provider]
+provider_info = "denodo_airflow_provider.__init__:get_provider_info"
+
+[tool.setuptools.dynamic]
+version = { attr = "denodo_airflow_provider.__version__" }
