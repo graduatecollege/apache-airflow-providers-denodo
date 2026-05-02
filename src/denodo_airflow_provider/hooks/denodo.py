@@ -15,7 +15,7 @@ class DenodoHook(DbApiHook):
     conn_name_attr = "denodo_conn_id"
     default_conn_name = "denodo_default"
     conn_type = "denodo"
-    hook_name = "denodo"
+    hook_name = "Denodo"
     supports_autocommit = True
     supports_executemany = True
 

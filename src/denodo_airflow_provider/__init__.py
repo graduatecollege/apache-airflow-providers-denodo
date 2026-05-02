@@ -1,13 +1,14 @@
-__version__ = "1.0.0"
+# read version from version.txt
+from os import path
 
-
+__version__ = open(path.join(path.dirname(__file__), '_version.txt')).read().strip()
 
 ## This is needed to allow Airflow to pick up specific metadata fields it needs for certain features.
 def get_provider_info():
     return {
-        "package-name": "denodo-airflow-provider",  # Required
-        "name": "denodo",  # Required
-        "description": "A sample template for Apache Airflow providers.",  # Required
+        "package-name": "apache-airflow-providers-denodo",  # Required
+        "name": "Denodo",  # Required
+        "description": "A simple provider for connecting to Denodo with Apache Airflow.",  # Required
         "connection-types": [
             {
                 "connection-type": "denodo",
