@@ -32,11 +32,11 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.entry-points.apache_airflow_provider]
-provider_info = "airflow_providers_denodo.get_provider_info:get_provider_info"
+provider_info = "airflow.providers.denodo.get_provider_info:get_provider_info"
 
 [tool.pdm.version]
 source = "scm"
-version_format = "src.airflow_providers_denodo.version:format_version"
+version_format = "src.airflow.providers.denodo.version:format_version"
 tag_filter = "v*"
 tag_regex = '^v(?P<version>\d+\.\d+\.\d+)$'
-write_to = "airflow_providers_denodo/_version.txt"
+write_to = "airflow/providers/denodo/_version.txt"

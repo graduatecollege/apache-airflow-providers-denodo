@@ -19,20 +19,20 @@ def get_provider_info():
         "hooks": [
             {
                 "integration-name": "denodo",
-                "python-modules": ["airflow_providers_denodo.hooks.denodo"],
+                "python-modules": ["airflow.providers.denodo.hooks.denodo"],
             }
         ],
         "connection-types": [
             {
                 "connection-type": "denodo",
-                "hook-class-name": "airflow_providers_denodo.hooks.denodo.DenodoHook",
+                "hook-class-name": "airflow.providers.denodo.hooks.denodo.DenodoHook",
                 "ui-field-behaviour": {"relabeling": {"schema": "Database"}},
             }
         ],
         "asset-uris": [
             {
                 "schemes": ["denodo"],
-                "handler": "airflow_providers_denodo.assets.denodo.sanitize_uri",
+                "handler": "airflow.providers.denodo.assets.denodo.sanitize_uri",
             }
         ],
         "versions": [__version__],  # Required
