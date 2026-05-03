@@ -40,3 +40,7 @@ version_format = "src.airflow.providers.denodo.version:format_version"
 tag_filter = "v*"
 tag_regex = '^v(?P<version>\d+\.\d+\.\d+)$'
 write_to = "airflow/providers/denodo/_version.txt"
+
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src/airflow"]
