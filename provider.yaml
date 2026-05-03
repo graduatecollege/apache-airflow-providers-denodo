@@ -19,10 +19,10 @@ integrations:
 hooks:
   - integration-name: Denodo
     python-modules:
-      - airflow.providers.denodo.hooks.denodo
+      - airflow_providers_denodo.hooks.denodo
 
 connection-types:
-  - hook-class-name: airflow.providers.denodo.hooks.denodo.DenodoHook
+  - hook-class-name: airflow_providers_denodo.hooks.denodo.DenodoHook
     connection-type: denodo
     ui-field-behaviour:
       relabeling:
@@ -30,4 +30,4 @@ connection-types:
 
 asset-uris:
   - schemes: [denodo]
-    handler: airflow.providers.denodo.assets.denodo.sanitize_uri
+    handler: airflow_providers_denodo.assets.denodo.sanitize_uri
