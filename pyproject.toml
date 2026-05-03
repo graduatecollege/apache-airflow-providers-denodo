@@ -32,7 +32,7 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.entry-points.apache_airflow_provider]
-provider_info = "airflow.providers.denodo.__init__:get_provider_info"
+provider_info = "airflow.providers.denodo.get_provider_info:get_provider_info"
 
 [tool.pdm.version]
 source = "scm"
