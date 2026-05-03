@@ -1,0 +1,33 @@
+---
+package-name: apache-airflow-providers-denodo
+name: Denodo
+description: |
+  `Denodo <https://www.denodo.com/>`__
+
+state: ready
+lifecycle: production
+source-date-epoch: 1777767235
+
+versions:
+  - 0.0.0
+
+integrations:
+  - integration-name: Denodo
+    external-doc-url: https://www.denodo.com/
+    tags: [software]
+
+hooks:
+  - integration-name: Denodo
+    python-modules:
+      - airflow.providers.denodo.hooks.denodo
+
+connection-types:
+  - hook-class-name: airflow.providers.denodo.hooks.denodo.DenodoHook
+    connection-type: denodo
+    ui-field-behaviour:
+      relabeling:
+        schema: Database
+
+asset-uris:
+  - schemes: [denodo]
+    handler: airflow.providers.denodo.assets.denodo.sanitize_uri
