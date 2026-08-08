@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = []
 lock_version = "4.5.0"
-content_hash = "sha256:0534ee8ffe2ea7cef4bd55bbab0d9865cca0c790d37ed9ca91cd1183b8aac4d0"
+content_hash = "sha256:55f38e948d4211dad05770c3ef371a35daddb87339a13470d8a60565a2e927fa"
 
 [[metadata.targets]]
 requires_python = ">=3.12"
@@ -87,20 +87,20 @@ files = [
 
 [[package]]
 name = "apache-airflow"
-version = "3.2.1"
+version = "3.3.0"
 summary = ""
 dependencies = [
     "apache-airflow-core",
     "apache-airflow-task-sdk",
 ]
 files = [
-    {file = "apache_airflow-3.2.1-py3-none-any.whl", hash = "sha256:40ad5acdfa4711499815015691e020e4a849883efc32b8473525ff66aeaaeca7"},
-    {file = "apache_airflow-3.2.1.tar.gz", hash = "sha256:0369c10195401c3b6866f81c03a98c97395c3ceb10fe8e1498ef0bb748b11e8d"},
+    {file = "apache_airflow-3.3.0-py3-none-any.whl", hash = "sha256:59ff9185c4292788dc422d9de5c384ca7b1fc11748ec88a10629d28b3385f3df"},
+    {file = "apache_airflow-3.3.0.tar.gz", hash = "sha256:6e72fc78e60383ba1c807c15f57ea44d46a2f503dff1be5a8dd571c333076303"},
 ]
 
 [[package]]
 name = "apache-airflow-core"
-version = "3.2.1"
+version = "3.3.0"
 summary = ""
 dependencies = [
     "a2wsgi",
@@ -115,6 +115,7 @@ dependencies = [
     "argcomplete",
     "asgiref",
     "attrs",
+    "cachetools",
     "cadwyn",
     "colorlog",
     "cron-descriptor",
@@ -125,6 +126,7 @@ dependencies = [
     "fastapi[standard-no-fastapi-cloud-cli]",
     "httpx",
     "importlib-metadata",
+    "isoduration",
     "itsdangerous",
     "jinja2",
     "jsonschema",
@@ -168,8 +170,8 @@ dependencies = [
     "uvicorn",
 ]
 files = [
-    {file = "apache_airflow_core-3.2.1-py3-none-any.whl", hash = "sha256:9f13bb8bde8ab5e4910c5fc2d1fd637af488f56e4c32c062c1de6dc83593a1b5"},
-    {file = "apache_airflow_core-3.2.1.tar.gz", hash = "sha256:737688a2df62b4827419161fccfb6c90e15d5eb4254c06a52014434d354931c1"},
+    {file = "apache_airflow_core-3.3.0-py3-none-any.whl", hash = "sha256:87c0afe38cfbfcb2b8bf91cd2f9af81d053346544b1997abd5794e94697775c1"},
+    {file = "apache_airflow_core-3.3.0.tar.gz", hash = "sha256:e58788ae9ad01a55f2fcda5a347eefe09ffef36d1d03d1253b6cd4b5990e91f5"},
 ]
 
 [[package]]
@@ -243,7 +245,7 @@ files = [
 
 [[package]]
 name = "apache-airflow-task-sdk"
-version = "1.2.1"
+version = "1.3.0"
 summary = ""
 dependencies = [
     "apache-airflow-core",
@@ -254,10 +256,12 @@ dependencies = [
     "fsspec",
     "greenback",
     "httpx",
+    "isoduration",
     "jinja2",
     "jsonschema",
     "methodtools",
     "msgspec",
+    "opentelemetry-api",
     "packaging",
     "pathspec",
     "pendulum",
@@ -271,8 +275,8 @@ dependencies = [
     "typing-extensions",
 ]
 files = [
-    {file = "apache_airflow_task_sdk-1.2.1-py3-none-any.whl", hash = "sha256:2816d191b0777034e69cc5a73b81a8cacaa77f6b95f6daa48f1563339a14c6f1"},
-    {file = "apache_airflow_task_sdk-1.2.1.tar.gz", hash = "sha256:ac9400cb477473a9d9eb6a5b50d2979fd1b0b50f96c6d29b4d0e924defc6179c"},
+    {file = "apache_airflow_task_sdk-1.3.0-py3-none-any.whl", hash = "sha256:b4220241e33b80f79113dd21cec414f98baf5028901dcf5ac96156c8fd9fe74c"},
+    {file = "apache_airflow_task_sdk-1.3.0.tar.gz", hash = "sha256:13d432b829f958f09bf8dfb20085870886fe60d2646958bde1befa9b018d0406"},
 ]
 
 [[package]]
@@ -282,6 +286,19 @@ summary = ""
 files = [
     {file = "argcomplete-3.6.3-py3-none-any.whl", hash = "sha256:f5007b3a600ccac5d25bbce33089211dfd49eab4a7718da3f10e3082525a92ce"},
     {file = "argcomplete-3.6.3.tar.gz", hash = "sha256:62e8ed4fd6a45864acc8235409461b72c9a28ee785a2011cc5eb78318786c89c"},
+]
+
+[[package]]
+name = "arrow"
+version = "1.4.0"
+summary = ""
+dependencies = [
+    "python-dateutil",
+    "tzdata",
+]
+files = [
+    {file = "arrow-1.4.0-py3-none-any.whl", hash = "sha256:749f0769958ebdc79c173ff0b0670d59051a535fa26e8eba02953dc19eb43205"},
+    {file = "arrow-1.4.0.tar.gz", hash = "sha256:ed0cc050e98001b8779e84d461b0098c4ac597e88704a655582b21d116e526d7"},
 ]
 
 [[package]]
@@ -309,6 +326,15 @@ summary = ""
 files = [
     {file = "babel-2.18.0-py3-none-any.whl", hash = "sha256:e2b422b277c2b9a9630c1d7903c2a00d0830c409c59ac8cae9081c92f1aeba35"},
     {file = "babel-2.18.0.tar.gz", hash = "sha256:b80b99a14bd085fcacfa15c9165f651fbb3406e66cc603abf11c5750937c992d"},
+]
+
+[[package]]
+name = "cachetools"
+version = "7.1.7"
+summary = ""
+files = [
+    {file = "cachetools-7.1.7-py3-none-any.whl", hash = "sha256:ef98ef375ad188819ef2f9b3645e3987f4b8c5b7550e436ad998c2de78296df0"},
+    {file = "cachetools-7.1.7.tar.gz", hash = "sha256:a3e2a00b14d8f8a6b70c1dae7b4685e7ad3bc965c5b42124a2d6ce895da6cf50"},
 ]
 
 [[package]]
@@ -906,6 +932,18 @@ dependencies = [
 files = [
     {file = "importlib_metadata-8.7.1-py3-none-any.whl", hash = "sha256:5a1f80bf1daa489495071efbb095d75a634cf28a8bc299581244063b53176151"},
     {file = "importlib_metadata-8.7.1.tar.gz", hash = "sha256:49fef1ae6440c182052f407c8d34a68f72efc36db9ca90dc0113398f2fdde8bb"},
+]
+
+[[package]]
+name = "isoduration"
+version = "20.11.0"
+summary = ""
+dependencies = [
+    "arrow",
+]
+files = [
+    {file = "isoduration-20.11.0-py3-none-any.whl", hash = "sha256:b2904c2a4228c3d44f409c8ae8e2370eb21a26f7ac2ec5446df141dde3452042"},
+    {file = "isoduration-20.11.0.tar.gz", hash = "sha256:ac2f9015137935279eac671f94f89eb00584f940f5dc49462a0c4ee692ba1bd9"},
 ]
 
 [[package]]
@@ -2130,15 +2168,15 @@ files = [
 
 [[package]]
 name = "starlette"
-version = "0.52.1"
+version = "1.6.0"
 summary = ""
 dependencies = [
     "anyio",
     "typing-extensions; python_full_version < \"3.13\"",
 ]
 files = [
-    {file = "starlette-0.52.1-py3-none-any.whl", hash = "sha256:0029d43eb3d273bc4f83a08720b4912ea4b071087a3b48db01b7c839f7954d74"},
-    {file = "starlette-0.52.1.tar.gz", hash = "sha256:834edd1b0a23167694292e94f597773bc3f89f362be6effee198165a35d62933"},
+    {file = "starlette-1.6.0-py3-none-any.whl", hash = "sha256:a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"},
+    {file = "starlette-1.6.0.tar.gz", hash = "sha256:d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"},
 ]
 
 [[package]]
