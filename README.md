@@ -11,5 +11,5 @@ of this product are 2028-08-31.
 
 End-of-Life was decided upon based on these dependencies:
 
-- Apache Airflow 3.21: TBD
+- Apache Airflow 3.2: TBD
 - Python 3.12: 2028-08-31
